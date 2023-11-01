@@ -1,4 +1,7 @@
-
+button {
+    margin: 1em 50%;
+    min-width: fit-content;
+}
 
 #container{
     margin: auto;
@@ -6,6 +9,8 @@
     flex-wrap: wrap;
     width: 800px;
     height: 800px;
+
+
 }
 
 div.grid {
@@ -13,8 +18,7 @@ div.grid {
     border-style: solid;
     border-width: 1px;
     border-color: #cac8c8;
-    height: 50px;
-    flex: 1 1 auto;
+    font-size: 10px;
 }
 
 .colored {

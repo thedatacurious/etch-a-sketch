@@ -6,12 +6,10 @@ document.body.insertBefore(gridBtn,container)
 
 function genGrid(num){
     for (i = 1; i <= num*num; i++){
-        const size = 800/num;
+        const size = Math.round(800/num);
         let div = document.createElement('div');
-        div.textContent = i;
         div.classList.add('grid')
-        div.setAttribute('width',size)
-        div.setAttribute('height', size)
+        div.setAttribute('style', ` flex: 1 1 ${size}px` )
         container.appendChild(div);
 
     }
@@ -21,7 +19,7 @@ function removeGrid(){
     container.replaceChildren();
 }
 
-genGrid(20);
+genGrid(24);
 
 
 function changeColor(e){
@@ -39,7 +37,7 @@ gridBtn.addEventListener('click', (e) => {
     let count = prompt('How many squares per side would you like for your canvas? Max: 100')
     if (count <= LIMIT){
         removeGrid();
-        // genGrid(count);
+        genGrid(count);
     }
 
     else if (count === 0){
