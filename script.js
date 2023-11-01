@@ -21,27 +21,29 @@ function removeGrid(){
 
 genGrid(24);
 
-function genRandomValue(){
-    return Math.floor(Math.random()*255);
+function genRandomValue(max){
+    return Math.floor(Math.random()*max);
 }
 
+let interactionCount = 0;
 
 function changeColor(e){
     let grid = e.target;
-    console.log(grid)
+    interactionCount++;
     if (grid.classList.contains('grid')){
         grid.classList.add('colored')
-        const r = genRandomValue();
-        const g = genRandomValue();
-        const b = genRandomValue();
-        grid.style.setProperty("background",`rgb(${r}, ${g}, ${b})` )
+        const h = genRandomValue(360);
+        const s = genRandomValue(100);
+        // make the grid darker by 10% each time an interaction oocurs
+        const l = Math.max(100-interactionCount*10, 0);
+        grid.style.setProperty("background",`hsl(${h} ${s}% ${l}%)` )
     }
 
 }
 container.addEventListener('mouseover', changeColor);
 
 
-gridBtn.addEventListener('click', (e) => {
+gridBtn.addEventListener('click', () => {
     const LIMIT = 100;
     let count = prompt('How many squares per side would you like for your canvas? Max: 100')
     if (count <= LIMIT){
