@@ -5,6 +5,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 800px;
+    height: 800px;
 }
 
 div.grid {
@@ -13,7 +14,7 @@ div.grid {
     border-width: 1px;
     border-color: #cac8c8;
     height: 50px;
-    flex: 1 1 50px;
+    flex: 1 1 auto;
 }
 
 .colored {
