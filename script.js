@@ -9,7 +9,7 @@ function genGrid(num){
         const size = Math.round(800/num);
         let div = document.createElement('div');
         div.classList.add('grid')
-        div.setAttribute('style', ` flex: 1 1 ${size}px` )
+        div.setAttribute('style', `flex: 1 1 ${size}px` )
         container.appendChild(div);
 
     }
@@ -21,11 +21,21 @@ function removeGrid(){
 
 genGrid(24);
 
+function genRandomValue(){
+    return Math.floor(Math.random()*255);
+}
+
 
 function changeColor(e){
     let grid = e.target;
+    console.log(grid)
     if (grid.classList.contains('grid')){
         grid.classList.add('colored')
+        const r = genRandomValue();
+        const g = genRandomValue();
+        const b = genRandomValue();
+        console.log(r,g,b)
+        grid.style.setProperty("background",`rgb(${r}, ${g}, ${b})` )
     }
 
 }
