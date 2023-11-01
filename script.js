@@ -41,7 +41,7 @@ function changeColor(e){
 
 }
 container.addEventListener('mouseover', changeColor);
-
+container.addEventListener('touchmove', changeColor);
 
 gridBtn.addEventListener('click', () => {
     const LIMIT = 100;
