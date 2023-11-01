@@ -1,4 +1,7 @@
+
+
 #container{
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     width: 800px;
@@ -11,4 +14,9 @@ div.grid {
     border-color: #cac8c8;
     height: 50px;
     flex: 1 1 50px;
+}
+
+.colored {
+    background-color: black;
+
 }
