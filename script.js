@@ -34,12 +34,11 @@ function changeColor(e){
         const r = genRandomValue();
         const g = genRandomValue();
         const b = genRandomValue();
-        console.log(r,g,b)
         grid.style.setProperty("background",`rgb(${r}, ${g}, ${b})` )
     }
 
 }
-container.addEventListener('mousemove', changeColor);
+container.addEventListener('mouseover', changeColor);
 
 
 gridBtn.addEventListener('click', (e) => {
