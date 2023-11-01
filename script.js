@@ -45,7 +45,7 @@ container.addEventListener('mouseover', changeColor);
 
 gridBtn.addEventListener('click', () => {
     const LIMIT = 100;
-    let count = prompt('How many squares per side would you like for your canvas? Max: 100')
+    let count = prompt('How many squares per side would you like for your canvas? Max: 100', 20)
     if (count <= LIMIT){
         removeGrid();
         genGrid(count);
